@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add New Task</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Task Title" required><br>
+    <textarea name="description" placeholder="Task Description" required></textarea><br>
+    <select name="difficulty">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select><br>
+    <button type="submit">Add Task</button>
+</form>
+{% endblock %}

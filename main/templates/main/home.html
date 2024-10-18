@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Welcome to Collaborative Coding Tasks</h1>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <h2>{{ task.title }} ({{ task.difficulty }})</h2>
+        <p>{{ task.description }}</p>
+        <a href="{% url 'add_solution' task.id %}">Submit Solution</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
